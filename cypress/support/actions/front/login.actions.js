@@ -19,3 +19,10 @@ export const realizarLogin = (credenciais) => {
   preencherLogin(credenciais)
   submeterLogin()
 }
+
+export const validarCamposDeLogin = () => {
+  cy.get('[data-testid="email"]').should('be.visible')
+  cy.get('[data-testid="senha"]').should('be.visible')
+  cy.get('[data-testid="entrar"]').should('be.visible')
+  cy.get('[data-testid="cadastrar"]').should('be.visible')
+}

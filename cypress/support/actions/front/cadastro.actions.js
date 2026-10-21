@@ -20,3 +20,12 @@ export const cadastrarUsuario = (usuario) => {
   preencherCadastro(usuario)
   submeterCadastro()
 }
+
+export const validarCamposDeCadastro = () => {
+  cy.get('[data-testid="nome"]').should('be.visible')
+  cy.get('[data-testid="email"]').should('be.visible')
+  cy.get('[data-testid="password"]').should('be.visible')
+  cy.get('[data-testid="checkbox"]').should('be.visible')
+  cy.get('[data-testid="cadastrar"]').should('be.visible')
+  cy.get('[data-testid="entrar"]').should('be.visible')
+}
