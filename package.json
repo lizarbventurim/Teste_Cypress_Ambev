@@ -2,7 +2,12 @@
   "name": "teste-cypress-ambev",
   "version": "1.0.0",
   "description": "Testes automatizados de front e API com Cypress (ServeRest)",
-  "scripts": {},
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:front": "cypress run --spec 'cypress/e2e/front/**/*.feature'",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.feature'"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lizarbventurim/Teste_Cypress_Ambev.git"
@@ -11,7 +16,7 @@
     "url": "https://github.com/lizarbventurim/Teste_Cypress_Ambev/issues"
   },
   "homepage": "https://github.com/lizarbventurim/Teste_Cypress_Ambev#readme",
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "cypress": "^16.2.0"
   }
