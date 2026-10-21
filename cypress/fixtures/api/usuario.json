@@ -1,0 +1,6 @@
+{
+  "nome": "Usuario Teste Cypress",
+  "email": "usuario@teste.com",
+  "password": "teste123",
+  "administrador": "true"
+}
