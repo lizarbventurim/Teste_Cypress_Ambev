@@ -18,6 +18,10 @@
   "homepage": "https://github.com/lizarbventurim/Teste_Cypress_Ambev#readme",
   "private": true,
   "devDependencies": {
-    "cypress": "^16.2.0"
+    "@badeball/cypress-cucumber-preprocessor": "^28.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "@faker-js/faker": "^10.6.0",
+    "cypress": "^16.2.0",
+    "esbuild": "^0.28.2"
   }
 }
