@@ -1,6 +1,7 @@
-import { Given, When } from '@badeball/cypress-cucumber-preprocessor'
+import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
 import {
   acessarPaginaDeCadastro,
+  validarCamposDeCadastro,
   preencherCadastro,
   submeterCadastro
 } from '../actions/front/cadastro.actions'
@@ -18,4 +19,8 @@ When('preencho o cadastro com dados aleatórios de administrador', () => {
 
 When('confirmo o cadastro', () => {
   submeterCadastro()
+})
+
+Then('devo ver os campos do formulário de cadastro', () => {
+  validarCamposDeCadastro()
 })

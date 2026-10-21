@@ -2,7 +2,8 @@ import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
 import {
   acessarPaginaDeLogin,
   preencherLogin,
-  submeterLogin
+  submeterLogin,
+  validarCamposDeLogin
 } from '../actions/front/login.actions'
 import { garantirUsuarioFixo } from '../actions/api/usuarios.actions'
 import { gerarUsuario } from '../data/usuario.factory'
@@ -28,6 +29,11 @@ When('confirmo o login', () => {
   submeterLogin()
 })
 
+Then('devo ver os campos do formulário de login', () => {
+  validarCamposDeLogin()
+})
+
 Then('devo permanecer na página de login', () => {
   cy.location('pathname').should('eq', '/login')
+  validarCamposDeLogin()
 })

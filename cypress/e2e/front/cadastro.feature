@@ -6,6 +6,7 @@ Funcionalidade: Cadastro de usuário (front)
 
   Cenário: Cadastrar um usuário administrador com dados aleatórios
     Dado que estou na página de cadastro
+    Então devo ver os campos do formulário de cadastro
     Quando preencho o cadastro com dados aleatórios de administrador
     E confirmo o cadastro
     Então devo ver a mensagem "Cadastro realizado com sucesso"
