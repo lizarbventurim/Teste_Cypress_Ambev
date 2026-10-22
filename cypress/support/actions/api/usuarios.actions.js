@@ -12,13 +12,13 @@ export const gerarUsuarioDaFixture = (fixture = 'api/usuario') =>
   })
 
 export const listarUsuarios = () =>
-  cy.request({ method: 'GET', url: `${apiUrl()}/usuarios`, failOnStatusCode: false })
+  cy.api({ method: 'GET', url: `${apiUrl()}/usuarios`, failOnStatusCode: false })
 
 export const buscarUsuarioPorId = (id) =>
-  cy.request({ method: 'GET', url: `${apiUrl()}/usuarios/${id}`, failOnStatusCode: false })
+  cy.api({ method: 'GET', url: `${apiUrl()}/usuarios/${id}`, failOnStatusCode: false })
 
 export const cadastrarUsuario = (usuario) =>
-  cy.request({
+  cy.api({
     method: 'POST',
     url: `${apiUrl()}/usuarios`,
     body: usuario,
@@ -26,11 +26,11 @@ export const cadastrarUsuario = (usuario) =>
   })
 
 export const excluirUsuario = (id) =>
-  cy.request({ method: 'DELETE', url: `${apiUrl()}/usuarios/${id}`, failOnStatusCode: false })
+  cy.api({ method: 'DELETE', url: `${apiUrl()}/usuarios/${id}`, failOnStatusCode: false })
 
 export const buscarUsuarioPorEmail = (email) =>
   cy
-    .request(`${apiUrl()}/usuarios?email=${encodeURIComponent(email)}`)
+    .api(`${apiUrl()}/usuarios?email=${encodeURIComponent(email)}`)
     .its('body.usuarios')
 
 export const garantirUsuarioFixo = ({ nome, email, administrador }) =>
