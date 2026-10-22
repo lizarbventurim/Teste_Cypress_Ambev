@@ -74,3 +74,9 @@ Then('a resposta deve conter a mensagem {string}', (mensagem) => {
 Then('a resposta deve conter o id do usuário criado', () => {
   cy.get('@resposta').its('body._id').should('be.a', 'string').and('not.be.empty')
 })
+
+Then('o contrato da resposta deve ser válido conforme o schema {string}', (schema) => {
+  cy.get('@resposta').its('body').then((body) => {
+    cy.validateSchema(`schema/${schema}`, body)
+  })
+})
